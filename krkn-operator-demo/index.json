@@ -1,0 +1,34 @@
+{
+  "title": "Krkn Operator Demo",
+  "description": "Install OCM and krkn-operator for chaos engineering on Kubernetes",
+  "details": {
+    "intro": {
+      "text": "intro.md",
+      "foreground": "foreground.sh",
+      "background": "background.sh"
+    },
+    "steps": [
+      {
+        "title": "Install OCM and Krkn Operator",
+        "text": "step1.md"
+      },
+      {
+        "title": "Expose the Operator",
+        "text": "step2.md"
+      },
+      {
+        "title": "Test the Operator API",
+        "text": "step3.md"
+      }
+    ],
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "backend": {
+    "imageid": "ubuntu"
+  },
+  "interface": {
+    "layout": "ide"
+  }
+}
