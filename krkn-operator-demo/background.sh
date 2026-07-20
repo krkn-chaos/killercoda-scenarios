@@ -32,7 +32,7 @@ fi
 echo "Prerequisites installed successfully!"
 
 # Create kind cluster configuration with port mapping for NodePort
-cat > /tmp/kind-config.yaml <<EOF
+cat > /tmp/kind-config.yaml <<'KINDEOF'
 kind: Cluster
 apiVersion: kind.x-k8s.io/v1alpha4
 nodes:
@@ -41,17 +41,20 @@ nodes:
   - containerPort: 30080
     hostPort: 30080
     protocol: TCP
-EOF
+KINDEOF
 
 # Create kind clusters
-echo "Creating kind clusters..."
+cat <<EOF
+Creating kind clusters...
+EOF
 kind create cluster --name hub --config /tmp/kind-config.yaml
 kind create cluster --name cluster1
 kind create cluster --name cluster2
 
-echo "Kind clusters created successfully!"
+cat <<EOF
+Kind clusters created successfully!
+Setup complete. Ready to proceed.
+EOF
 
 # Mark setup as complete
 touch /tmp/setup-complete
-
-echo "Setup complete. Ready to proceed."

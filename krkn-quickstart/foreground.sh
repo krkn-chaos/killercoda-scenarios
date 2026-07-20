@@ -1,25 +1,28 @@
 #!/bin/bash
 
 clear
-echo "============================================================"
-echo "   Krkn - Chaos Engineering for Kubernetes"
-echo "============================================================"
-echo ""
-echo "   'Break your cluster on purpose,"
-echo "    before production does it for you.'"
-echo ""
-echo "   What you'll do:"
-echo "     1. Deploy a target app on a 2-node cluster"
-echo "     2. Kill its pods with krknctl"
-echo "     3. Verify recovery and read exit codes"
-echo "     4. Stress a worker node's CPU"
-echo "     5. Chain scenarios into a chaos graph"
-echo "     6. Watch the impact in Krkn's web UI"
-echo ""
-echo "   Environment: $(kubectl get nodes --no-headers 2>/dev/null | wc -l | tr -d ' ') node Kubernetes cluster"
-echo ""
-echo "   Installing krknctl and pre-pulling scenario images"
-echo "   in the background (this can take a couple of minutes,"
-echo "   you can start Step 1 right away)..."
-echo ""
-echo "============================================================"
+NODE_COUNT=$(kubectl get nodes --no-headers 2>/dev/null | wc -l | tr -d ' ')
+cat <<EOF
+============================================================
+   Krkn - Chaos Engineering for Kubernetes
+============================================================
+
+   'Break your cluster on purpose,
+    before production does it for you.'
+
+   What you'll do:
+     1. Deploy a target app on a 2-node cluster
+     2. Kill its pods with krknctl
+     3. Verify recovery and read exit codes
+     4. Stress a worker node's CPU
+     5. Chain scenarios into a chaos graph
+     6. Watch the impact in Krkn's web UI
+
+   Environment: ${NODE_COUNT} node Kubernetes cluster
+
+   Installing krknctl and pre-pulling scenario images
+   in the background (this can take a couple of minutes,
+   you can start Step 1 right away)...
+
+============================================================
+EOF
