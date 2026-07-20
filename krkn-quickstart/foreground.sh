@@ -1,6 +1,5 @@
 #!/bin/bash
 
-clear
 NODE_COUNT=$(kubectl get nodes --no-headers 2>/dev/null | wc -l | tr -d ' ')
 cat <<EOF
 ============================================================
