@@ -45,10 +45,20 @@ KINDEOF
 
 # Create kind clusters
 cat <<EOF
-Creating kind clusters...
+Creating hub cluster...
 EOF
 kind create cluster --name hub --config /tmp/kind-config.yaml
+
+# Create kind clusters
+cat <<EOF
+Creating local cluster 1...
+EOF
 kind create cluster --name cluster1
+
+# Create kind clusters
+cat <<EOF
+Creating local cluster 2...
+EOF
 kind create cluster --name cluster2
 
 cat <<EOF
