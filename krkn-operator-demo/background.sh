@@ -58,3 +58,5 @@ EOF
 
 # Mark setup as complete
 touch /tmp/setup-complete
+
+echo "Setup complete. Ready to proceed."
